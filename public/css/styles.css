@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.game_title {
+    color: gold;
+}
+
+#game_board {
+    height: 600px;
+    width: 800px;
+    background-color: black;
+}
