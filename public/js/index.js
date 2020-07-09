@@ -5,6 +5,7 @@ const animate = window.requestAnimationFrame;
 
 let canvas;
 let ctx;
+let player;
 let frame = 0;
 
 
@@ -14,12 +15,14 @@ function setup() {
     canvas = document.querySelector('canvas');
     // use the canvas to setup the context
     ctx = canvas.getContext('2d');
+    player = new Player((WIDTH / 2) - 10, (HEIGHT / 2) - 10);
     animate(draw);
 }
 
 function draw() {
     clearBackground();
     drawBackground();
+    player.draw();
     // recursion
     console.log('frame', ++frame)
     animate(draw);
