@@ -9,8 +9,8 @@ body {
     color: gold;
 }
 
-#game_board {
+#game {
     height: 600px;
     width: 800px;
-    background-color: black;
+    margin: 0 auto;
 }
