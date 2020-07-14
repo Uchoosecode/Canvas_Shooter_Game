@@ -44,4 +44,27 @@ class Player {
                 
         }
     }
+
+    stop = (e) => {
+        e.preventDefault();
+        // .which is the keyCode number
+        switch(e.which) {
+            case UP_ARROW:
+                this.yspeed = 0;
+                break;
+
+            case DOWN_ARROW:
+                this.yspeed = 0;
+                break;
+
+            case LEFT_ARROW:
+                this.xspeed = 0;
+                break;
+
+            case RIGHT_ARROW:
+                this.xspeed = 0;
+                break;
+
+        }
+    }
 }
