@@ -1,6 +1,11 @@
 /** GLOBAL VARIABLES **/
 const WIDTH = 800;
 const HEIGHT = 600;
+
+const UP_ARROW = null;
+const DOWN_ARROW = null;
+const LEFT_ARROW = null;
+const RIGHT_ARROW = null;
 const animate = window.requestAnimationFrame;
 
 let canvas;
