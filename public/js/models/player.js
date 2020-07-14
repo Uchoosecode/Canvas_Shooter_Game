@@ -24,7 +24,7 @@ class Player {
 
     move = (e) => {
         e.preventDefault();
-
+        // .which is the keyCode number
         switch(e.which) {
             case UP_ARROW:
                 this.yspeed = -1;
@@ -33,6 +33,15 @@ class Player {
             case DOWN_ARROW:
                 this.yspeed = 1;
                 break;
+
+            case LEFT_ARROW:
+                this.xspeed = -1;
+                break;
+
+            case RIGHT_ARROW:
+                this.xspeed = 1;
+                break;
+                
         }
     }
 }
