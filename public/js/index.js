@@ -1,11 +1,11 @@
 /** GLOBAL VARIABLES **/
 const WIDTH = 800;
 const HEIGHT = 600;
-
-const UP_ARROW = null;
-const DOWN_ARROW = null;
-const LEFT_ARROW = null;
-const RIGHT_ARROW = null;
+// direction variables
+const UP_ARROW = 38;
+const DOWN_ARROW = 40;
+const LEFT_ARROW = 37;
+const RIGHT_ARROW = 39;
 const animate = window.requestAnimationFrame;
 
 let canvas;
@@ -29,7 +29,7 @@ function draw() {
     drawBackground();
     player.draw();
     // recursion
-    console.log('frame', ++frame)
+   
     animate(draw);
 }
 
