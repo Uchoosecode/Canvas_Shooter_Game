@@ -7,8 +7,26 @@ class Player {
         this.color = 'white';
         this.width = 20;
         this.height = 20;
+        this.facingPosition = {
+            up: true,
+            left: false,
+            down: false,
+            right: false
+        }
+
+       
+
         document.addEventListener('keydown', this.move);
         document.addEventListener('keyup', this.stop);
+    }
+
+    resetFacingPosition() {
+        this.facingPosition = {
+            up: false,
+            left: false,
+            down: false,
+            right: false
+        }
     }
 
     update() {
@@ -24,22 +42,32 @@ class Player {
 
     move = (e) => {
         e.preventDefault();
+
+        this.resetFacingPosition();
         // .which is the keyCode number
         switch(e.which) {
             case UP_ARROW:
                 this.yspeed = -1;
+                this.facingPosition.up = true;
                 break;
-
+                
             case DOWN_ARROW:
                 this.yspeed = 1;
+                this.facingPosition.down = true;
                 break;
 
             case LEFT_ARROW:
                 this.xspeed = -1;
+                this.facingPosition.left = true;
                 break;
 
             case RIGHT_ARROW:
                 this.xspeed = 1;
+                this.facingPosition.right = true;
+                break;
+
+            case SPACEBAR:
+                this.fireLaserBeam();
                 break;
                 
         }
@@ -47,7 +75,7 @@ class Player {
 
     stop = (e) => {
         e.preventDefault();
-        // .which is the keyCode number
+        
         switch(e.which) {
             case UP_ARROW:
                 this.yspeed = 0;
@@ -67,4 +95,13 @@ class Player {
 
         }
     }
+
+    drawLaserBeam() {
+
+    }
+
+    fireLaserBeam() {
+        console.log('firing laser beam')
+    }
+
 }
