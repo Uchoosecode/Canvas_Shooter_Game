@@ -6,6 +6,7 @@ const UP_ARROW = 38;
 const DOWN_ARROW = 40;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
+const SPACEBAR = 32;
 const animate = window.requestAnimationFrame;
 
 let canvas;
