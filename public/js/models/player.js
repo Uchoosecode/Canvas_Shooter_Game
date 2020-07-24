@@ -125,8 +125,20 @@ class Player {
                 width: 4,
                 height: 4
             }
-        // } else if(this.facingPosition.left) {
-
+        } else if(this.facingPosition.left) {
+            this.laserBeamPosition = {
+                x: this.x - 5.5,
+                y: this.y + (this.height / 2) - 2,
+                width: 4,
+                height: 4
+            } 
+        } else if(this.facingPosition.right) {
+            this.laserBeamPosition = {
+                x: this.x + this.width + 2.75,
+                y: this.y + (this.height / 2) - 2,
+                width: 4,
+                height: 4
+            }
         } 
 
     }
