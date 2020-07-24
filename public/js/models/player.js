@@ -15,13 +15,12 @@ class Player {
         }
 
         this.laserBeamPosition = {
-            up: {
-                x: this.x + (this.width / 2) - 2,
-                y: this.y - 5.5,
-                width: 4,
-                height: 4
-            }
+            x: this.x + (this.width / 2) - 2,
+            y: this.y - 5.5,
+            width: 4,
+            height: 4
         }
+        
 
         document.addEventListener('keydown', this.move);
         document.addEventListener('keyup', this.stop);
@@ -107,19 +106,29 @@ class Player {
 
     drawLaserBeamPosition() {
         ctx.fillStyle = 'red';
-        ctx.fillRect(this.laserBeamPosition.up.x, this.laserBeamPosition.up.y, 
-                     this.laserBeamPosition.up.width, this.laserBeamPosition.up.height);
+        ctx.fillRect(this.laserBeamPosition.x, this.laserBeamPosition.y, 
+                     this.laserBeamPosition.width, this.laserBeamPosition.height);
     }
 
     updateLaserBeamPosition() {
-        this.laserBeamPosition = {
-            up: {
+        if(this.facingPosition.up) {
+            this.laserBeamPosition = {
                 x: this.x + (this.width / 2) - 2,
                 y: this.y - 5.5,
                 width: 4,
                 height: 4
             }
-        }
+        } else if(this.facingPosition.down) {
+            this.laserBeamPosition = {
+                x: this.x + (this.width / 2) - 2,
+                y: this.y + this.height + 2.75,
+                width: 4,
+                height: 4
+            }
+        // } else if(this.facingPosition.left) {
+
+        } 
+
     }
 
     fireLaserBeam() {
