@@ -7,9 +7,14 @@ class LaserBeam {
         LaserBeam.all.push(this);
     }
 
-    startingPosition() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.position.x, this.position.y, this.width = 4, this.height = 10)
+    startingPosition(position) {
+        console.log(position)
+        if (position.facing == "up") {
+            this.x = position.x,
+            this.y = position.y,
+            this.width = 4,
+            this.height = 8
+        }
     }
 
     update() {
@@ -17,11 +22,12 @@ class LaserBeam {
     }
 
     draw() {
+        console.log('drawing laserbeam')
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height)
     }
 
     static drawAll() {
-        LaserBeam.all.forEach(laserbeam => this.draw());
+        LaserBeam.all.forEach(laserbeam => laserbeam.draw());
     }
 }
