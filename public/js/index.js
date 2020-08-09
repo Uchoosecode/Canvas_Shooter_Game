@@ -29,6 +29,7 @@ function draw() {
     clearBackground();
     drawBackground();
     player.draw();
+    LaserBeam.drawAll();
     // recursion
    
     animate(draw);
