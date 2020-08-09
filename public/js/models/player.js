@@ -51,32 +51,35 @@ class Player {
     move = (e) => {
         e.preventDefault();
 
-        this.resetFacingPosition();
         // .which is the keyCode number
         switch(e.which) {
             case UP_ARROW:
+                this.resetFacingPosition();
                 this.yspeed = -1;
                 this.facingPosition.up = true;
-                break;
+            break;
                 
             case DOWN_ARROW:
+                this.resetFacingPosition();
                 this.yspeed = 1;
                 this.facingPosition.down = true;
-                break;
-
+            break;
+                    
             case LEFT_ARROW:
+                this.resetFacingPosition();
                 this.xspeed = -1;
                 this.facingPosition.left = true;
-                break;
-
+            break;
+                        
             case RIGHT_ARROW:
+                this.resetFacingPosition();
                 this.xspeed = 1;
                 this.facingPosition.right = true;
-                break;
+            break;
 
             case SPACEBAR:
                 this.fireLaserBeam();
-                break;
+            break;
                 
         }
     }
@@ -145,6 +148,13 @@ class Player {
 
     fireLaserBeam() {
         console.log('firing laser beam')
+        if(this.facingPosition.up) {
+            new LaserBeam({
+                x: this.laserBeamPosition.x,
+                y: this.laserBeamPosition.y + this.laserBeamPosition.height,
+                facing: 'up'
+            })
+        }
     }
 
 }
