@@ -154,6 +154,12 @@ class Player {
                 y: this.laserBeamPosition.y + this.laserBeamPosition.height,
                 facing: 'up'
             })
+        } else if (this.facingPosition.down) {
+            new LaserBeam({
+                x: this.laserBeamPosition.x,
+                y: this.laserBeamPosition.y + this.laserBeamPosition.height,
+                facing: 'down'
+            })
         }
     }
 
