@@ -23,6 +23,13 @@ class LaserBeam {
             this.y = position.y - this.height;
             this.xspeed = 0;
             this.yspeed = 3;
+        } else if (position.facing == "left") {
+            this.width = 8;
+            this.height = 4;
+            this.x = position.x - 4;
+            this.y = position.y;
+            this.xspeed = -3;
+            this.yspeed = 0;
         }
     }
 
