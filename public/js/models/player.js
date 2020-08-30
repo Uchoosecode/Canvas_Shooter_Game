@@ -166,6 +166,12 @@ class Player {
                 y: this.laserBeamPosition.y,
                 facing: 'left'
             })
+        } else if (this.facingPosition.right) {
+            new LaserBeam({
+                x: this.laserBeamPosition.x,
+                y: this.laserBeamPosition.y,
+                facing: 'right'
+            })
         }
     } 
 }
